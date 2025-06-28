@@ -11,11 +11,13 @@ async function main() {
 
   const run = await mastra.getWorkflow('articleWorkflow').createRun();
 
-  console.log('Starting article workflow for topic: "Номофобия"');
+  const topic = 'AI агенты, будущее профессий';
+
+  console.log(`Starting article workflow for topic: "${topic}"`);
 
   const result = await run.start({
     inputData: {
-      topic: 'Номофобия',
+      topic,
       styleFilePath: 'src/mastra/styles/default-style.txt',
     },
   });
